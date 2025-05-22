@@ -1,6 +1,7 @@
 <table class="table">
     <thead>
         <tr>
+            <th></th>
             <th>Nombre</th>
             <th>Tipo</th>
             <th>Precio</th>
@@ -8,12 +9,22 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
+        @for (maqueta of maquetas; track maqueta.name) {
+        <tr [ngClass]="{'onSale':maqueta.onSale}">
             <td ><img [src]="maqueta.image" [alt]="maqueta.name" width="100px"></td>
             <td>{{maqueta.name}}</td>
             <td>{{maqueta.type}}</td>
-            <td>{{maqueta.price}}</td>
-            <td>{{maqueta.stock}}</td>
+            <td>{{maqueta.price |currency }}</td>
+            @if(maqueta.stock > 0) {
+                <td>{{maqueta.stock}}</td>
+            } @else {
+                <td><span class="badge bg-danger">Sin stock</span></td>
+            }
         </tr>
+        }@empty{
+            <tr>
+                <td colspan="5" class="text-center">No hay maquetas disponibles</td>
+            </tr>
+        }
     </tbody>
 </table>
