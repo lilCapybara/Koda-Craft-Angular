@@ -6,6 +6,7 @@
             <th>Tipo</th>
             <th>Precio</th>
             <th>Stock</th>
+            <th>Compra</th>
         </tr>
     </thead>
     <tbody>
@@ -18,8 +19,13 @@
             @if(maqueta.stock > 0) {
                 <td>{{maqueta.stock}}</td>
             } @else {
-                <td><span class="badge bg-danger">Sin stock</span></td>
+                <td><span class="badge bg-warning">Sin stock</span></td>
             }
+            <td>
+                <button class="btn btn-danger" (click)="downQuantity(maqueta)">-</button>
+                <input type="text" [(ngModel)]="maqueta.quantity">
+                <button class="btn btn-success" (click)="upQuantity(maqueta)">+</button>
+            </td>
         </tr>
         }@empty{
             <tr>

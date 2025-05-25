@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Maqueta } from './maqueta';
+import { Maqueta } from './Maqueta';
 
 @Component({
   selector: 'app-lista-maquetas',
@@ -16,32 +16,52 @@ export class ListaMaquetasComponent {
     price : 500,
     stock : 3,
     image : "assets/img/tanjiro.jpg",
-    onSale : false
+    onSale : false,
+    quantity : 0
   },
   {
     name : "Zenitsu Agatsuma",
     type : "Kimetsu no Yaiba",
     price : 500,
     stock : 2,
-    image : "assets/img/.jpg",
-    onSale : false
+    image : "assets/img/zenitsu.jpg",
+    onSale : false,
+    quantity : 0
   },
   {
     name : "Inosuke Hashibira",
     type : "Kimetsu no Yaiba",
     price : 500,
     stock : 5,
-    image : "assets/img/.jpg",
-    onSale : true
+    image : "assets/img/inosuke.jpg",
+    onSale : true,
+    quantity : 0
   },
   {
     name : "Kamado Nezuko",
     type : "Kimetsu no Yaiba",
     price : 500,
     stock : 0,
-    image : "assets/img/.jpg",
-    onSale : false
+    image : "assets/img/nezuko.jpg",
+    onSale : false,
+    quantity : 0
   }
-]
+];
+
+constructor() {};
+ngOnInit(): void {
+}
+
+upQuantity(maqueta: Maqueta) : void {
+  if (maqueta.quantity < maqueta.stock) {
+    maqueta.quantity++;
+  }
+}
+
+downQuantity(maqueta: Maqueta) : void {
+  if (maqueta.quantity > 0) {
+    maqueta.quantity--;
+  }
+}
 
 }

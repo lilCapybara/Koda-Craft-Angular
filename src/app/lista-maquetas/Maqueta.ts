@@ -5,4 +5,5 @@ export interface Maqueta{
     stock: number;
     image: string;
     onSale: boolean;
+    quantity: number;
 }
