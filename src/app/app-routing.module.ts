@@ -1,7 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { KodaCraftMaquetasComponent } from './koda-craft-maquetas/koda-craft-maquetas.component';
+import { KodaCraftAboutComponent } from './koda-craft-about/koda-craft-about.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'maquetas',
+    pathMatch: 'full'
+  },
+  {
+    path: 'maquetas',
+    component: KodaCraftMaquetasComponent
+  },
+  {
+    path: 'about',
+    component: KodaCraftAboutComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

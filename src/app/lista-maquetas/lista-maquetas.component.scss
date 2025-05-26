@@ -10,6 +10,13 @@
 
 input{
   width: 15%;
-  height: 100%;
   text-align: center;
+}
+
+.input-group{
+  max-height: 50%
+}
+
+td {
+  vertical-align: middle;
 }
