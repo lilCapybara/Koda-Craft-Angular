@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { KodaCraftAboutComponent } from './koda-craft-about/koda-craft-about.component';
 import { KodaCraftMaquetasComponent } from './koda-craft-maquetas/koda-craft-maquetas.component';
 import { CartComponent } from './cart/cart.component';
+import { InputIntegerComponent } from './input-integer/input-integer.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CartComponent } from './cart/cart.component';
     ListaMaquetasComponent,
     KodaCraftAboutComponent,
     KodaCraftMaquetasComponent,
-    CartComponent
+    CartComponent,
+    InputIntegerComponent
   ],
   imports: [
     BrowserModule,

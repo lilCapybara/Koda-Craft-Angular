@@ -52,16 +52,8 @@ constructor() {};
 ngOnInit(): void {
 }
 
-upQuantity(maqueta: Maqueta) : void {
-  if (maqueta.quantity < maqueta.stock) {
-    maqueta.quantity++;
-  }
-}
-
-downQuantity(maqueta: Maqueta) : void {
-  if (maqueta.quantity > 0) {
-    maqueta.quantity--;
-  }
+maxReached(mensaje: String) {
+  alert(mensaje);
 }
 
 }
