@@ -23,6 +23,7 @@
             }
             <td>
                 <app-input-integer [(quantity)]="maqueta.quantity" [max]="maqueta.stock" (maxReached)="maxReached($event)"></app-input-integer>
+                <button class="btn" (click)="addToCart(maqueta)">Comprar</button>
             </td>
 
         </tr>

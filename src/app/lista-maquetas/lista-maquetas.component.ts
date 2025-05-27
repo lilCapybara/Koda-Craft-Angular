@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Maqueta } from './Maqueta';
+import { MaquetaCartService } from '../maqueta-cart.service';
 
 @Component({
   selector: 'app-lista-maquetas',
@@ -48,8 +49,18 @@ export class ListaMaquetasComponent {
   }
 ];
 
-constructor() {};
+
+constructor(private cart : MaquetaCartService) {
+  
+};
+
 ngOnInit(): void {
+}
+
+addToCart(maqueta: Maqueta): void {
+  this.cart.addToCart(maqueta);
+  maqueta.stock -= maqueta.quantity;
+  maqueta.quantity = 0;
 }
 
 maxReached(mensaje: String) {
