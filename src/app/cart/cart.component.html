@@ -1,1 +1,10 @@
 <div class="col-4">Carrito de compras</div>
+
+<ul>
+    @for (maqueta of cartList$ | async; track maqueta.name) {
+        <li>
+            {{maqueta.name}}: {{maqueta.quantity}}
+        </li>
+    }
+    
+</ul>
