@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Maqueta } from './Maqueta';
 import { MaquetaCartService } from '../maqueta-cart.service';
+import { MaquetaDataService } from '../maqueta-data.service';
 
 @Component({
   selector: 'app-lista-maquetas',
@@ -10,51 +11,20 @@ import { MaquetaCartService } from '../maqueta-cart.service';
 })
 export class ListaMaquetasComponent {
 
-  maquetas: Maqueta [] = [
-    {
-    name : "Kamado Tanjiro",
-    type : "Kimetsu no Yaiba",
-    price : 500,
-    stock : 3,
-    image : "assets/img/tanjiro.jpg",
-    onSale : false,
-    quantity : 0
-  },
-  {
-    name : "Zenitsu Agatsuma",
-    type : "Kimetsu no Yaiba",
-    price : 500,
-    stock : 2,
-    image : "assets/img/zenitsu.jpg",
-    onSale : false,
-    quantity : 0
-  },
-  {
-    name : "Inosuke Hashibira",
-    type : "Kimetsu no Yaiba",
-    price : 500,
-    stock : 5,
-    image : "assets/img/inosuke.jpg",
-    onSale : true,
-    quantity : 0
-  },
-  {
-    name : "Kamado Nezuko",
-    type : "Kimetsu no Yaiba",
-    price : 500,
-    stock : 0,
-    image : "assets/img/nezuko.jpg",
-    onSale : false,
-    quantity : 0
-  }
-];
+  maquetas: Maqueta [] = [];
 
-
-constructor(private cart : MaquetaCartService) {
+//Nunca debo hacer un new de un servicio, siempre inyecto
+//en el constructor, Angular se encarga de crear la instancia del servicio
+constructor(  
+  private cart : MaquetaCartService,
+  private maquetaDataService: MaquetaDataService
+) {
   
 };
 
 ngOnInit(): void {
+  this.maquetaDataService.getAll()
+  .subscribe(maquetas => this.maquetas = maquetas);
 }
 
 addToCart(maqueta: Maqueta): void {
