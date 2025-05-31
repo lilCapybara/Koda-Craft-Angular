@@ -1,0 +1,28 @@
+.container {
+  display: grid;
+  height: 100%;
+  padding-top: 5% ;
+}
+
+.ig_page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+}
+
+.ig_page img {
+  width: 300px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.qr_page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
