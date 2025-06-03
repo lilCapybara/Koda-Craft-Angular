@@ -1,10 +1,15 @@
-<div class="col-4">Carrito de compras</div>
+<div class="cart-container">
+    <div class="col-4"><h3>Carrito de compras</h3></div>
 
-<ul>
-    @for (maqueta of cartList$ | async; track maqueta.name) {
-        <li>
-            {{maqueta.name}}: {{maqueta.quantity}}
-        </li>
-    }
-    
-</ul>
+    <ul>
+        @for (maqueta of cartList$ | async; track maqueta.name) {
+            <div class="container">
+                <li>
+                    {{maqueta.name}}: {{maqueta.quantity}}
+                    <button class="btn btn-danger" (click)="removeFromCart(maqueta)">Quitar</button>
+                </li>
+            </div>
+        }
+        
+    </ul>
+</div>

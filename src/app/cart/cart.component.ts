@@ -11,6 +11,10 @@ import { Observable } from 'rxjs';
 })
 export class CartComponent {
 
+  removeFromCart(maqueta: Maqueta): void {
+    this.cart.removeFromCart(maqueta);
+  }
+
   cartList$ : Observable<Maqueta[]>;
   constructor(private cart : MaquetaCartService) { 
     this.cartList$ = this.cart.cartList.asObservable();

@@ -1,0 +1,25 @@
+.cart-container {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3; /* Color de fondo claro */
+}
+
+h3 {
+    text-align: center;
+    color: #333; /* Color de texto oscuro */
+}
+
+button {
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+li {
+    list-style: none;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-bottom: 1px solid #ccc; /* Línea divisoria entre los elementos */
+}
+    

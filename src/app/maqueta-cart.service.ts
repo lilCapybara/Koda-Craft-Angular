@@ -30,4 +30,15 @@ export class MaquetaCartService {
                                         //Es equivalente al emit de eventos
   }
 
+  removeFromCart(maqueta: Maqueta) {
+    const index = this._cartList.findIndex((v1) => v1.name === maqueta.name);
+    if (index !== -1) {
+      this._cartList.splice(index, 1);
+      this.cartList.next(this._cartList); // Notifica a los observadores que el carrito ha cambiado
+      console.log("Maqueta eliminada del carrito:", maqueta);
+    } else {
+      console.log("Maqueta no encontrada en el carrito:", maqueta);
+    }
+  }
+
 }
