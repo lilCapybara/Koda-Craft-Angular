@@ -1,0 +1,43 @@
+<form [formGroup]="contactForm" (submit)="onSubmit()">
+
+  <h1>¡Envianos tu consulta!</h1>
+  <div [class.invalid]="contactForm.get('nombre')?.invalid">
+    <label for="nombre">Nombre:</label>
+    <input id="nombre" formControlName="nombre"/>
+
+    <div class="error-message">
+      <p *ngIf="contactForm.get('nombre')?.hasError('required')">Nombre requerido</p>
+    </div>
+  </div>
+
+  <div [class.invalid]="contactForm.get('apellido')?.invalid">
+    <label for="apellido">Apellido:</label>
+    <input id="apellido" formControlName="apellido"/>
+
+    <div class="error-message">
+      <p *ngIf="contactForm.get('apellido')?.hasError('required')">Apellido requerido</p>
+    </div>
+  </div>
+
+  <div [class.invalid]="contactForm.get('email')?.invalid">
+    <label for="email">Email:</label>
+    <input id="email" type="email" formControlName="email"/>
+
+    <div class="error-message">
+      <p *ngIf="contactForm.get('email')?.hasError('required')">Email requerido</p>
+      <p *ngIf="contactForm.get('email')?.hasError('email')">Email no valido</p>
+    </div>
+  </div>
+
+  <div [class.invalid]="contactForm.get('mensaje')?.invalid">
+    <label for="mensaje">Tu consulta:</label>
+    <textarea id="mensaje" formControlName="mensaje"></textarea>
+
+    <div class="error-message">
+      <p *ngIf="contactForm.get('mensaje')?.hasError('required')">La consulta no puede estar vacia</p>
+    </div>
+
+  </div>
+
+  <button class="btn btn-primary" type="submit" [disabled]="contactForm.invalid">Enviar</button>
+</form>
