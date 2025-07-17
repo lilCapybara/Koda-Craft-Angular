@@ -1,11 +1,11 @@
 # KodaCraft
 
--Nombre: Sebastian Gaston
--Apellido: Ortega
--DNI: 39.804.501
--Correo electronico: sortega@alumnos.exa.unicen.edu.ar
--Sede: Tandil
--Enlace a [StackBlitz](https://stackblitz.com/~/github.com/lilCapybara/Koda-Craft-Angular).
+- Nombre: Sebastian Gaston
+- Apellido: Ortega
+- DNI: 39.804.501
+- Correo electronico: sortega@alumnos.exa.unicen.edu.ar
+- Sede: Tandil
+- Enlace a [StackBlitz](https://stackblitz.com/~/github.com/lilCapybara/Koda-Craft-Angular).
 
 
 
